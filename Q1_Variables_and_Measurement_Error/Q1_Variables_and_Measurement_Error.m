@@ -1,0 +1,13 @@
+clc; clear; close all;
+observed = [5.1 5.0 5.3 4.9 5.2];
+true_value = 5.0;
+err = observed - true_value;
+abs_err = abs(err);
+mae = mean(abs_err);
+disp('Observed times (months):'); disp(observed);
+disp('Errors (months):'); disp(err);
+disp('Absolute errors (months):'); disp(abs_err);
+fprintf('MAE = %.2f months\n', mae);
+figure; bar(observed);
+title('Development Time Measurements');
+xlabel('Observation Number'); ylabel('Development Time (months)'); grid on;

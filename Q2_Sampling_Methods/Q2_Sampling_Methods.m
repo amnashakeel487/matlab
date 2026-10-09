@@ -1,0 +1,14 @@
+clc; clear; close all;
+sizes = [60 50 70 60]; N = sum(sizes); n = 24;
+fprintf('Population = %d; sample size = %d\n', N, n);
+disp('Simple random sample IDs:'); disp(sort(randperm(N,n)));
+disp('Stratified sample allocation [A B C D]:'); disp((sizes/N)*n);
+A = randperm(60,6); B = randperm(50,5)+60;
+C = randperm(70,7)+110; D = randperm(60,6)+180;
+disp('Section A IDs:'); disp(sort(A));
+disp('Section B IDs:'); disp(sort(B));
+disp('Section C IDs:'); disp(sort(C));
+disp('Section D IDs:'); disp(sort(D));
+k = N/n; start = randi(k);
+fprintf('Systematic interval k = %d; random start = %d\n',k,start);
+disp('Systematic sample IDs:'); disp(start:k:N);
